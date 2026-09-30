@@ -1,0 +1,10 @@
+{
+    "name": "root/html",
+    "description": "Sistema de reservas",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
