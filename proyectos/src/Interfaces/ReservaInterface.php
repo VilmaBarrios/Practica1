@@ -8,7 +8,7 @@ use App\Models\Usuario;
 use App\Models\Equipo;
 use App\Models\Reserva;
 
-interface ReservableInterface
+interface ReservaInterface
 {
     public function reservar(Usuario $usuario, Equipo $equipo, int $cantidad, int $horas): Reserva;
 }

@@ -12,8 +12,9 @@ use App\Models\Visitante;
 use App\Models\Laptop;
 use App\Models\Proyector;
 use App\Models\Camara;
-use App\Services\ReservaService;
+use App\Services\ReservaServices;
 use App\Exceptions\ReservaException;
+use App\Interfaces\ReservaInterface;
 
 // Arreglos asociativos y multidimensionales iniciales de equipos[cite: 1]
 if (!isset($_SESSION['catalog_equipos'])) {
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $equipoObj = $claseEquipo::crearDesdeArreglo($datosEquipo);
 
             // Servicio de Reserva[cite: 1]
-            $service = new ReservaService();
+            $service = new ReservaServices();
             $reserva = $service->reservar($usuarioObj, $equipoObj, $cantidad, $horas);
 
             // Actualizar existencias en la sesión
